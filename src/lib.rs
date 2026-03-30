@@ -1,20 +1,20 @@
-/// A lightweight SCPI command parser.
-///
-/// Pattern syntax (used in the table passed to [`CommandSet::from_table`]):
-///
-/// - Keywords use mixed case: uppercase = required, lowercase = optional.
-///   `SYSTem` matches `SYST`, `SYSTE`, `SYSTEM` (all case-insensitive).
-/// - `:` separates hierarchical keywords.
-/// - `#` in a keyword means a numeric suffix (defaults to 1 when absent).
-/// - `[...]` encloses an optional keyword node, including its leading colon
-///   when written as `[:NODE]`.
-/// - `?` at the end marks a query.
-/// - After keywords, a space-separated token declares the parameter type:
-///   `num`, `bool`, `str`.
-///
-/// Input lines may contain multiple commands separated by `;`.
-/// A leading `:` (or `:` after `;`) resets to the root of the command tree;
-/// without it, compound commands continue from the previous tree position.
+//! A lightweight SCPI command parser.
+//!
+//! Pattern syntax (used in the table passed to [`CommandSet::from_table`]):
+//!
+//! - Keywords use mixed case: uppercase = required, lowercase = optional.
+//!   `SYSTem` matches `SYST`, `SYSTE`, `SYSTEM` (all case-insensitive).
+//! - `:` separates hierarchical keywords.
+//! - `#` in a keyword means a numeric suffix (defaults to 1 when absent).
+//! - `[...]` encloses an optional keyword node, including its leading colon
+//!   when written as `[:NODE]`.
+//! - `?` at the end marks a query.
+//! - After keywords, a space-separated token declares the parameter type:
+//!   `num`, `bool`, `str`.
+//!
+//! Input lines may contain multiple commands separated by `;`.
+//! A leading `:` (or `:` after `;`) resets to the root of the command tree;
+//! without it, compound commands continue from the previous tree position.
 
 use std::fmt;
 

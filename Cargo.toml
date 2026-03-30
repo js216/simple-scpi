@@ -2,3 +2,8 @@
 name = "simple-scpi"
 version = "0.1.0"
 edition = "2024"
+description = "A lightweight SCPI command parser"
+license = "MIT"
+repository = "https://github.com/js216/simple-scpi"
+keywords = ["scpi", "parser", "ieee488", "instrument", "gpib"]
+categories = ["parser-implementations", "embedded", "science"]
